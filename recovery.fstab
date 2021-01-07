@@ -1,0 +1,23 @@
+system		/system			ext4		display="System"logical
+vendor		/vendor			ext4		display="Vendor";logical
+product		/product		ext4		display="Product";logical
+odm		/odm		        ext4		display="Odm";logical
+
+/boot           emmc    /dev/block/platform/13520000.ufs/by-name/boot
+/cache          ext4	/dev/block/platform/13520000.ufs/by-name/cache  	flags=backup=1;
+/cpefs		ext4	/dev/block/platform/13520000.ufs/by-name/cpefs		flags=backup=1;display="cpefs"
+/data           f2fs	/dev/block/platform/13520000.ufs/by-name/userdata
+/dtb		emmc	/dev/block/platform/13520000.ufs/by-name/dtb	 	flags=backup=1;flashimg
+/dtbo		emmc	/dev/block/platform/13520000.ufs/by-name/dtbo	 	flags=backup=1;flashimg
+/efs	        ext4	/dev/block/platform/13520000.ufs/by-name/efs	    	flags=backup=1;display="EFS"
+/modem	      	emmc	/dev/block/platform/13520000.ufs/by-name/radio	  	flags=backup=1;display="Modem Firmware"
+/optics         ext4	/dev/block/platform/13520000.ufs/by-name/optics  	flags=backup=1;display="optics"
+/prism          ext4	/dev/block/platform/13520000.ufs/by-name/prism  	flags=backup=1;display="prism"
+/recovery       emmc    /dev/block/platform/13520000.ufs/by-name/recovery	flags=backup=1;flashimg
+/super          emmc    /dev/block/platform/13520000.ufs/by-name/super          flags=display="super";backup=1;flashimg=1
+/vbmeta		emmc	/dev/block/platform/13520000.ufs/by-name/vbmeta 	flags=backup=1;flashimg
+
+/misc		emmc	/dev/block/platform/13520000.ufs/by-name/misc	    	flags=backup=0;display="Misc"
+
+/external_sd	vfat	/dev/block/mmcblk0p1 /dev/block/mmcblk0	         	flags=display="Micro SDcard";storage;wipeingui;removable
+/usb-otg	vfat	/dev/block/sdf1 /dev/block/sdf		         	flags=display="USB-OTG";storage;wipeingui;removable
